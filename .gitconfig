@@ -1,3 +1,5 @@
 [user]
 	name = Felipe Alves
 	email = felipenews87@gmail.com
+[credential]
+	helper = store
