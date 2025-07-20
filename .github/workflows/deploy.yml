@@ -1,8 +1,9 @@
+
 name: Deploy to Railway
 
 on:
   push:
-    branches: [ "production" ]  # mude para main se necessário
+    branches: ["main" ]  # mude para main se necessário
 
 jobs:
   deploy:
