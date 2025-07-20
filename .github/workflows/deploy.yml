@@ -1,0 +1,26 @@
+name: Deploy to Railway
+
+on:
+  push:
+    branches: [ "production" ]  # mude para main se necessário
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      RAILWAY_TOKEN: ${{ secrets.KKK }}
+      RAILWAY_API_TOKEN: ${{ secrets.KKK }}
+      RAILWAY_PROJECT_ID: cbaa70cb-1cf5-4027-b7ea-55f6cb11cf51
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Railway CLI
+        run: npm i -g @railway/cli
+
+      - name: Link project
+        run: railway link $RAILWAY_PROJECT_ID
+
+      - name: Deploy
+        run: railway up --detach
